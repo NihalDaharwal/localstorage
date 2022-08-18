@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="result1"></div>
+<div id="result2"></div>
+<div><button id="clear" onclick="reset">clear</button></div>
+
+<script>
+// Check browser support
+if (typeof(Storage) !== "undefined") {
+  // Store
+  localStorage.setItem("firstname", "nihal");
+  localStorage.setItem("lastname", "daharwal");
+  
+  // Retrieve
+  document.getElementById("result1").innerHTML = localStorage.getItem("firstname");
+  document.getElementById("result2").innerHTML = localStorage.getItem("lastname");
+  
+  //clear
+  let btn = document.createElement('button'); //<button> </button>
+btn.innerHTML="delete" ;
+result.appendChild(btn);
+
+btn.addEventListener ("click", function() {
+  localStorage.clear();
+ 
+
+    });
+
+
+
+} else {
+  document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+}
+</script>
+
+</body>
+</html>
